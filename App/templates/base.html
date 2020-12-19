@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static',filename='css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='css/all.min.css')}}" rel="stylesheet">
+    <title>Diabetes Prediction</title>
+</head>
+<body>
+    {% block body %} {% endblock %}
+    <script src="{{url_for('static',filename='js/bootstrap.js')}}"></script>
+    <script src="{{url_for('static',filename='js/popper.js')}}"></script>
+    <script src="{{url_for('static',filename='js/jquery.js')}}"></script>
+    <script src="{{url_for('static',filename='js/all.min.js')}}"></script>
+</body>
+</html>

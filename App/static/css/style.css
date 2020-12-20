@@ -1,0 +1,9 @@
+.navbar{
+    background-color: #e9892f4f;
+}
+body{
+    background-image: url("../images/background.jpg");
+    background-color: #e9892f;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

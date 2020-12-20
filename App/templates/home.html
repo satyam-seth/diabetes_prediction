@@ -1,4 +1,51 @@
 {% extends "base.html" %}
 {% block body %}
-    <h1>Home Page</h1>
+    <div class="container-fluid bg">
+        <div class="row">
+            <div class="container py-5">
+                <div class="row">
+                    <h1 class="text-center my-3">Diabetes Predictor</h1>
+                    <div class="col-md-6 offset-md-3">
+                    <form action="" method="POST" class="text-white">
+                        <div class="mb-3">
+                          <label for="InputPregnancies" class="form-label">Number of Pregnancies</label>
+                          <input type="number" class="form-control" id="InputPregnancies" name="Pregnancies" min="0" max="20" placeholder="eg. 1">
+                        </div>
+                        <div class="mb-3">
+                          <label for="InputGlucose" class="form-label">Glucose (mg/dL)</label>
+                          <input type="number" class="form-control" id="InputGlucose" name="Glucose" min="50" max="200" placeholder="eg. 90">
+                        </div>
+                        <div class="mb-3">
+                          <label for="InputBloodPressure" class="form-label">Blood Pressure (mmHg)</label>
+                          <input type="number" class="form-control" id="InputBloodPressure" name="BloodPressure" min="50" max="200" placeholder="eg. 80">
+                        </div>
+                        <div class="mb-3">
+                          <label for="InputSkinThickness" class="form-label">Skin Thickness (mm)</label>
+                          <input type="number" class="form-control" id="InputSkinThickness" name="SkinThickness" min="10" max="50" placeholder="eg. 20">
+                        </div>
+                        <div class="mb-3">
+                          <label for="InputInsulinLevel" class="form-label">Insulin Level (IU/mL)</label>
+                          <input type="number" class="form-control" id="InputInsulinLevel" name="InsulinLevel"  min="20" max="900" placeholder="eg. 100">
+                        </div>
+                        <div class="mb-3">
+                          <label for="InputBodyMassIndex" class="form-label">Body Mass Index (kg/m²)</label>
+                          <input type="number" class="form-control" id="InputBodyMassIndex" name="BodyMassIndex" min="20" max="50" step="0.1" placeholder="eg. 29.6">
+                        </div>
+                        <div class="mb-3">
+                          <label for="InputDiabetesPedigreeFunction" class="form-label">Diabetes Pedigree Function</label>
+                          <input type="number" class="form-control" id="InputDiabetesPedigreeFunction" name="DiabetesPedigreeFunction" min="0.1" max="3" step="0.001" placeholder="eg. 0.52">
+                        </div>
+                        <div class="mb-3">
+                          <label for="InputAge" class="form-label">Age</label>
+                          <input type="number" class="form-control" id="InputAge" name="Age" min="15" max="100" placeholder="eg. 25">
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success">Predict</button>
+                          </div>
+                      </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock body %}

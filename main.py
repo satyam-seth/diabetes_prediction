@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,redirect
+from flask import Flask,render_template,request,redirect,jsonify
 import numpy as np
 import xgboost
 import pickle
@@ -25,9 +25,7 @@ def predict():
         age=request.form.get('Age')
 
         data=np.array([[int(num_preg),int(glucose_conc),int(diastolic_bp),int(thickness),int(insulin),float(bmi),float(dpf),int(age)]])
-        
         prediction=classifier.predict(data)
-        print(prediction)
 
         context={
             'num_preg':num_preg,
@@ -45,6 +43,25 @@ def predict():
 
     elif request.method=='GET':
         return redirect('/')
+
+@app.route('/api/<int:num_preg>/<int:glucose_conc>/<int:diastolic_bp>/<int:thickness>/<int:insulin>/<float:bmi>/<float:dpf>/<int:age>')
+def api_help(num_preg,glucose_conc,diastolic_bp,thickness,insulin,bmi,dpf,age):
+    data=np.array([[int(num_preg),int(glucose_conc),int(diastolic_bp),int(thickness),int(insulin),float(bmi),float(dpf),int(age)]])
+    prediction=classifier.predict(data)
+
+    result={
+            'num_preg':num_preg,
+            'glucose_conc':glucose_conc,
+            'diastolic_bp':diastolic_bp,
+            'thickness':thickness,
+            'insulin':insulin,
+            'bmi':bmi,
+            'dpf':dpf,
+            'age':age,
+            'pred':bool(prediction[0])
+        }
+
+    return jsonify(result)
 
 if __name__ == '__main__':
 	app.run(debug=True)

@@ -39,13 +39,17 @@ def predict():
             'pred':prediction
         }        
 
-        return render_template('prediction.html',context=context)
+        return render_template('prediction.html',context=context,pred_active='active')
 
     elif request.method=='GET':
         return redirect('/')
 
+@app.route('/api')
+def api_help():
+    return render_template('api.html',api_active='active')
+
 @app.route('/api/<int:num_preg>/<int:glucose_conc>/<int:diastolic_bp>/<int:thickness>/<int:insulin>/<float:bmi>/<float:dpf>/<int:age>')
-def api_help(num_preg,glucose_conc,diastolic_bp,thickness,insulin,bmi,dpf,age):
+def api_pred(num_preg,glucose_conc,diastolic_bp,thickness,insulin,bmi,dpf,age):
     data=np.array([[int(num_preg),int(glucose_conc),int(diastolic_bp),int(thickness),int(insulin),float(bmi),float(dpf),int(age)]])
     prediction=classifier.predict(data)
 

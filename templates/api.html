@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col-md-8 offset-md-2">
+                <p class="h2 alert alert-info shadow text-center">How to use API</p>
+            </div>
+        </div>
+        <div class="row text-white">
+            <div class="col-md-8 offset-md-2">
+                <div class="border rounded shadow bg-dark mb-4">
+                    <div class="p-3">
+                        <p class="h6">We just simply make a get request </p>
+                        <span class="h6">Url Pattern -</span>
+                        <span style="word-wrap: break-word;"><i>https://diabetes-pred-app.herokuapp.com/api/[num_preg]/[glucose_conc]/[diastolic_bp]/[thickness]/[insulin]/[bmi]/[dpf]/[age]</i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <table class="table table-dark text-center table-striped shadow">
+                    <thead>
+                        <tr>
+                            <th scope="col">Arguments</th>
+                            <th scope="col">Meaning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">num_preg</th>
+                            <td>Number of Pregnancies</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">glucose_conc</th>
+                            <td>Glucose (mg/dL)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">diastolic_bp</th>
+                            <td>Blood Pressure (mmHg)</td>
+                        <tr>
+                            <th scope="row">thickness</th>
+                            <td>Skin Thickness (mm)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">insulin</th>
+                            <td>Insulin Level (IU/mL)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">bmi</th>
+                            <td>Body Mass Index (kg/m²)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">dpf</th>
+                            <td>Diabetes Pedigree Function</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">age</th>
+                            <td>Age</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row pt-2">
+            <div class="col-md-8 offset-md-2">
+                <p class="h2 alert alert-info shadow text-center">Example</p>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-8 offset-md-2">
+                <div class="shadow">
+                    <img width="100%" src="{{url_for('static',filename='images/example.png')}}" alt="exapmle">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

@@ -14,6 +14,11 @@
           <li class="nav-item">
             <a class="nav-link {{home_active}}" aria-current="page" href="/"><b>Home</b></a>
           </li>
+          {% if pred_active %}
+          <li class="nav-item">
+            <a class="nav-link {{pred_active}}" aria-current="page"><b>Prediction</b></a>
+          </li>
+          {% endif %}
           <li class="nav-item">
             <a class="nav-link {{api_active}}" href="/api"><b>API</b></a>
           </li>
